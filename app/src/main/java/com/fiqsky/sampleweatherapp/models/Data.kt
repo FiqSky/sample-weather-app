@@ -7,6 +7,8 @@ data class Data(
     val main: Main,
     @SerializedName("name")
     val name: String,
+    @SerializedName("dt")
+    val dt: Int,
     @SerializedName("sys")
     val sys: Sys,
     @SerializedName("timezone")
