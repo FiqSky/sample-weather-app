@@ -1,13 +1,16 @@
 package com.fiqsky.sampleweatherapp
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.fiqsky.sampleweatherapp.api.ApiRequest
 import com.fiqsky.sampleweatherapp.models.Data
 import com.fiqsky.sampleweatherapp.utils.kelvinToCelsius
 import com.fiqsky.sampleweatherapp.utils.unixTimestampToDateTimeString
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.layout.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -21,14 +24,26 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         apiRequest()
+        swipe.setProgressBackgroundColorSchemeColor(
+            ContextCompat.getColor(
+                this,
+                R.color.design_default_color_primary
+            )
+        )
+        swipe.setColorSchemeColors(Color.WHITE)
+
+        swipe.setOnRefreshListener {
+            apiRequest()
+            swipe.isRefreshing = false
+        }
     }
 
     private fun apiRequest() {
         val api = Retrofit.Builder()
-                .baseUrl(BuildConfig.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(ApiRequest::class.java)
+            .baseUrl(BuildConfig.BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(ApiRequest::class.java)
 
         GlobalScope.launch(Dispatchers.IO) {
             try {
