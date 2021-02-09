@@ -24,11 +24,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         apiRequest()
+        swipeRefresh()
+    }
+
+    private fun swipeRefresh() {
         swipe.setProgressBackgroundColorSchemeColor(
-            ContextCompat.getColor(
-                this,
-                R.color.design_default_color_primary
-            )
+                ContextCompat.getColor(
+                        this,
+                        R.color.purple_500
+                )
         )
         swipe.setColorSchemeColors(Color.WHITE)
 
@@ -40,10 +44,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun apiRequest() {
         val api = Retrofit.Builder()
-            .baseUrl(BuildConfig.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(ApiRequest::class.java)
+                .baseUrl(BuildConfig.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(ApiRequest::class.java)
 
         GlobalScope.launch(Dispatchers.IO) {
             try {
@@ -64,6 +68,10 @@ class MainActivity : AppCompatActivity() {
         tv_date_time.text = response.dt.unixTimestampToDateTimeString()
         tv_temperature.text = response.main.temp.kelvinToCelsius().toString()
         tv_weather_condition.text = response.weather[0].description
+        lottieAnim(response)
+    }
+
+    private fun lottieAnim(response: Data) {
         when (response.weather[0].main) {
             "Haze" -> lottie_weather_condition.setAnimation(R.raw.haze)
             "Fog" -> lottie_weather_condition.setAnimation(R.raw.haze)
