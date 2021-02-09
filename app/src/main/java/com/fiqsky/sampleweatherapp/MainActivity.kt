@@ -29,10 +29,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun swipeRefresh() {
         swipe.setProgressBackgroundColorSchemeColor(
-                ContextCompat.getColor(
-                        this,
-                        R.color.purple_500
-                )
+            ContextCompat.getColor(
+                this,
+                R.color.purple_500
+            )
         )
         swipe.setColorSchemeColors(Color.WHITE)
 
@@ -44,10 +44,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun apiRequest() {
         val api = Retrofit.Builder()
-                .baseUrl(BuildConfig.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(ApiRequest::class.java)
+            .baseUrl(BuildConfig.BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(ApiRequest::class.java)
 
         GlobalScope.launch(Dispatchers.IO) {
             try {
