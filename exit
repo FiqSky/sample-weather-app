@@ -1,0 +1,41 @@
+[33mcommit 31f8de3471998c076c6134e12254e2646b0b998f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: FiqSky <fiqihfm05@gmail.com>
+Date:   Tue Feb 9 14:10:20 2021 +0700
+
+    add views in different rotations
+
+[33mcommit d145b902a4b01e97854156d16e1d37a473072d4d[m
+Author: FiqSky <fiqihfm05@gmail.com>
+Date:   Tue Feb 9 13:19:36 2021 +0700
+
+    change color app and clean code
+
+[33mcommit d7726e73afddff03b831f5c801d353d197e2740c[m
+Author: FiqSky <fiqihfm05@gmail.com>
+Date:   Mon Feb 8 10:48:24 2021 +0700
+
+    add swipe to refresh
+
+[33mcommit daa6e4b26702deb7d91983dca5ee0258fbaf5b8f[m
+Author: FiqSky <fiqihfm05@gmail.com>
+Date:   Mon Feb 8 10:25:05 2021 +0700
+
+    layout and responses
+
+[33mcommit abae16d899d7af9d4e6cbde671029505a1f4228c[m
+Author: FiqSky <fiqihfm05@gmail.com>
+Date:   Sat Feb 6 04:08:27 2021 +0700
+
+    add pakage api and models and then test get data
+
+[33mcommit 84eb44d92a6e6318db70f103db5afb108cd88f7f[m
+Author: FiqSky <fiqihfm05@gmail.com>
+Date:   Sat Feb 6 03:20:00 2021 +0700
+
+    Add dependencies, api key, and uses permission
+
+[33mcommit 597a3650a417c3dbb23c43f79cb633b55e8558a8[m
+Author: FiqSky <fiqihfm05@gmail.com>
+Date:   Fri Feb 5 15:44:12 2021 +0700
+
+    Initial commit
